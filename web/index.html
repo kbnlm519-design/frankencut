@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FrankenCut — Footage to first cut</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside>
+    <a class="brand" href="/" aria-label="FrankenCut home"><span class="brand-icon">✂</span> FrankenCut<span class="dot">.</span></a>
+    <div class="side-label">YOUR EDITING DESK</div>
+    <a class="nav active" href="#library"><span>01</span> Footage library</a>
+    <a class="nav" href="#story"><span>02</span> Build the story</a>
+    <a class="nav" href="#review"><span>03</span> Review & export</a>
+    <div class="side-bottom"><span class="online"></span> Local workspace<br><small>Your footage stays on this device.</small><p>KIROWEEN 2026 · PROTOTYPE</p></div>
+  </aside>
+  <main>
+    <header><div class="eyebrow">FROM FOOTAGE TO FIRST CUT</div><span class="pill">LOCAL-FIRST / NO UPLOADS</span></header>
+    <section class="hero" id="library">
+      <div><h1>A folder of footage.<br><em>A story waiting inside.</em></h1><p>Find the right shots, skip the duplicates, and stitch together a rough cut you can actually review.</p></div>
+      <div class="hero-note"><span class="stitch">✦</span><strong>Made for the<br>first, messy edit.</strong><small>You keep the final say.</small></div>
+    </section>
+    <section class="import-panel">
+      <label for="folder">1. Bring your footage</label>
+      <div class="import-row"><input id="folder" placeholder="Absolute path to a local footage folder" autocomplete="off"><button id="scan">Scan folder <span>↗</span></button><button class="secondary" id="demo">Try synthetic demo</button></div>
+      <p class="hint">Requires FFmpeg · Original files stay untouched · Generated-output folders are excluded</p>
+    </section>
+    <div id="status" role="status" aria-live="polite">Start with a folder, or try the synthetic demo.</div>
+    <div class="library-heading"><h2>Your footage <span id="count">0</span></h2><input id="search" aria-label="Search footage filenames" placeholder="Search filenames…"></div>
+    <div class="stats" id="stats"></div>
+    <div id="assets" class="asset-grid"><div class="empty">Your next edit starts here.<br><small>Scan a folder to see thumbnails, metadata, and exact duplicates.</small></div></div>
+    <section class="story-panel" id="story">
+      <div><div class="eyebrow">MAKE A PLAN</div><h2>2. Give the footage a direction.</h2><p>One filename keyword per shot. Set the in-point and length in seconds. This prototype uses deterministic filename matching.</p><div class="tip">Try <strong>city → river → mountain</strong> with the synthetic demo.<br>Unmatched shots are reported, never filled with unrelated footage.</div></div>
+      <div><label for="shots">Editable shot list · JSON</label><textarea id="shots" spellcheck="false">[
+  {"query": "city", "start": 0, "seconds": 2},
+  {"query": "river", "start": 0.5, "seconds": 2},
+  {"query": "mountain", "start": 1, "seconds": 2}
+]</textarea><button id="plan">Build rough-cut plan <span>→</span></button></div>
+    </section>
+    <section id="review"><div class="review-heading"><div><div class="eyebrow">HUMAN IN THE LOOP</div><h2>3. Check every shot. Then export.</h2></div><button id="export" disabled>Approve & export MP4 <span>↗</span></button></div><p class="hint">Inspect the beginning, midpoint, and end of each selected interval. Moving text needs a fuller manual review. Text detection is not automated in this version.</p><div id="timeline"><div class="empty small">Your shot plan will appear here.</div></div><div id="result"></div></section>
+    <footer>FrankenCut / Stitch your footage into something worth watching.<span>720 × 1280 · H.264 · silent rough cuts</span></footer>
+  </main>
+  <template id="asset-template"><article class="asset"><div class="asset-image"><img alt=""><span class="asset-duration"></span></div><div class="asset-info"><h3></h3><div class="asset-meta"></div><span class="badge"></span></div></article></template>
+</body>
+</html>

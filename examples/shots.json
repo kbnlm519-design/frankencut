@@ -1,0 +1,6 @@
+[
+  {"query": "city", "start": 0, "seconds": 2},
+  {"query": "river", "start": 0.5, "seconds": 2},
+  {"query": "mountain", "start": 1, "seconds": 2}
+]
+

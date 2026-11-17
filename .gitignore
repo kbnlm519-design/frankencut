@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+workspace/
+demo-footage/
+.DS_Store
+.venv/
+*.log
+
