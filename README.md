@@ -119,8 +119,14 @@ Kiro CLI reviewed the real Python pipeline, JavaScript UI, tests, and requiremen
 on 2026-11-17. Its review led to a single-snapshot plan-validation change and a
 regression test. Findings were checked before applying them, including suggestions
 that did not hold up against the code. See `docs/KIRO_USAGE.md` for the actual
-task and contribution record. This is still a prototype, not a completed final
-competition submission, and credit approval is not guaranteed by a repository.
+task and contribution record. This is a working prototype; credit approval is
+not guaranteed by a repository or a competition submission.
+
+## Downloadable test build
+
+Download the source archive from the repository's **Releases** page, extract it,
+and follow [TESTING.md](TESTING.md). The test build runs locally and requires
+Python 3.9+, FFmpeg and ffprobe. It does not require credentials or API keys.
 
 ## License
 
